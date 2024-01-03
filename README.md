@@ -1,0 +1,1 @@
+I created a simple register/login interface within a terminal window. The goal of the project was to demonstrate I understand the basics of programming {loops, function, if statemnts, dictionary, varible}
