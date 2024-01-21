@@ -21,7 +21,6 @@ def register():
         break # exit loop
 
 def web_password(password):
-
     while True:
         str_password = str(password)
         if not (8 <= len(str_password) <= 12):
@@ -49,16 +48,22 @@ def web_password(password):
 def login ():
     while True:
         login_username = input('Please enter your username: ')
-        # how do i look up this user name? from the dictionary? 
         if login_username not in users: # in keyword used with dictionarys only refernce keys, not values
-            # how do i check for values?
             print('username is not in our system. Please try again: ')
-            continue
-        print('Username found')
+            login_username = input('Please enter your username: ')
+        else:
+            print('Username found')
+            break
+    
+    while True:
         login_password = input('Enter your password: ')
         if login_password != users[login_username]: # the password is the value of key:value relationship, thus, password is the value for usernsame key
             print('password is incorrect - try agian')
-            continue
+            login_password = input('Enter your password: ')
+        else:
+            print('correct password')
+            break
+    
 
 def login_or_register ():
     log_v_reg = input('Please type login or register: ')
