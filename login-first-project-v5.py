@@ -66,5 +66,15 @@ def login ():
     
 
 def login_or_register ():
-    log_v_reg = input('Please type login or register: ')
-    # check if input only contains login or register
+    valid_inputs = {'login', 'register'}
+    while True:
+        log_v_reg = input('Please type login or register: ').lower() # intialize lower case without new varible
+        if log_v_reg not in valid_inputs:
+            print('Invalid input. Please type either "login" or "register".')
+        else:
+            break
+        if log_v_reg == 'login':
+            login()
+        elif log_v_reg == 'register':
+            register()
+        # i can also use if/else as only two options to pick
